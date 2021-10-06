@@ -1,7 +1,7 @@
 import { REQUIRED } from '../../configs/constants';
 
 export default {
-    signup: {
+    user: {
         validation: {
             email: {
                 in: 'body',

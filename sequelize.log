@@ -137,3 +137,485 @@
 {"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
 {"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
 {"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'adsdasd@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'test@fa.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`email`,`password`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'a50fc620-26a0-11ec-8256-77250b07655d';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'a50fc620-26a0-11ec-8256-77250b07655d';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'w@fa.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`email`,`password`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = ':id';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = ':id';"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`email`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `email`=?,`password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe2350';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `password`=?,`email`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe2350';"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'acf9e090-26a1-11ec-b715-1527afe23508';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 'all-users';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `email`, `password`, `createdAt`, `updatedAt` FROM `users` AS `user`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 'a50fc620-26a0-11ec-8256-77250b07655d'"}
+{"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 'a50fc620-26a0-11ec-8256-77250b07655'"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 'a50fc620-26a0-11ec-8256-77250b07655d'"}
+{"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 'a50fc620-26a0-11ec-8256-77250b07655d'"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='rooshe' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
