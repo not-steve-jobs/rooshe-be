@@ -1,36 +1,28 @@
-import User from '../models/user'
-import { Conflict, NotFound } from '../errors';
-import { Util } from "../helpers/util";
+import User from '../models/user';
+import { NotFound } from '../errors';
+import { Util } from '../helpers/util';
 
 class UserService {
 
-    async signup({email, password}) {
-        const user = await User.findOne({
-            where: {
-                email
-            }
-        });
-        if (user)  throw new Conflict('user is created');
-        const createdUser = await User.create({
-            email,
-            password:Util.generateHash(password)
-        });
-        return createdUser;
-    };
-
-    async update({body, param}) {
+    async update({ body, param }) {
         const user = await User.findOne({
             where: {
                 id: param.id
             }
         });
-        if (!user) throw new NotFound('user not found');
-        const { email, password } = body;
-        user.password = Util.generateHash(password);
+        if (!user) { throw new NotFound('user not found'); }
+        const { firstName, lastName, email, password, phone, bDay, address } = body;
+        user.firstName = firstName;
+        user.lastName = lastName;
         user.email = email;
+        user.password = Util.generateHash(password);
+        user.phone = phone;
+        user.bDay = bDay;
+        user.address = address;
         await user.save();
+
         return user;
-    };
+    }
 
     async delete(param) {
         return await User.destroy({
@@ -38,7 +30,7 @@ class UserService {
                 id: param.id
             }
         });
-    };
+    }
 
     async getOneUser(param) {
         const user = await User.findOne({
@@ -46,14 +38,16 @@ class UserService {
                 id: param.id
             }
         });
-        if (!user) throw new NotFound('user not found');
+        if (!user) { throw new NotFound('user not found'); }
+
         return user;
-    };
+    }
 
     async getAllUsers() {
-      const allUsers = User.findAll({});
-      return allUsers;
-    };
+        const allUsers = User.findAll({});
+
+        return allUsers;
+    }
 
 }
 export default new UserService();
