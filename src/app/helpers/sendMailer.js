@@ -1,13 +1,18 @@
 import nodemailer  from 'nodemailer';
+import param from '../configs/params';
 
 const transporter = nodemailer.createTransport(
     {
+        // ////////////////////////////////////////
+        // /////////////REAL EMAIL/////////////////
+        // ////////////////////////////////////////
+
         // host: 'smtp.mail.ru',
         // port: 465,
         // secure: true, // true for 465, false for other ports
         // auth: {
-        //     user: process.env.EMAIL_USER,
-        //     pass: process.env.EMAIL_PASSWORD
+        //     user: param.emailUser,
+        //     pass: param.emailPassword
         // }
         host: 'smtp.mailtrap.io',
         port: 2525,

@@ -11,7 +11,7 @@ const logger = winston.createLogger({
 const sequelize = new Sequelize(param.db, param.dbUser, param.dbPassword, {
     host: param.dbHost,
     port: param.dbPort,
-    dialect:'mysql',
+    dialect: 'mysql',
     logging: msg => logger.log('debug', msg),
     pool: {
         max: 5,
@@ -20,6 +20,6 @@ const sequelize = new Sequelize(param.db, param.dbUser, param.dbPassword, {
         idle: 10000
     }
 });
-sequelize.sync({ alter: true })
+sequelize.sync({ alter: true });
 
-module.exports = sequelize
+module.exports = sequelize;

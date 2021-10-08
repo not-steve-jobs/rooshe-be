@@ -11,4 +11,6 @@ export const dbPassword = env.get('DB_PASSWORD').asString();
 export const db = env.get('DB').asString();
 export const dbPort = env.get('DB_PORT').asString();
 export const tokenKey = env.get('TOKEN_KEY').asString();
+export const emailUser = env.get('EMAIL_USER').asString();
+export const emailPassword = env.get('EMAIL_PASSWORD').asString();
 
