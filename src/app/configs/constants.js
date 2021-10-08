@@ -7,5 +7,3 @@ export const SERVICE_UNAVAILABLE = 'Service is temporarily unavailable';
 export const WRONG_METHOD_MESSAGE = 'wrong method';
 export const WRONG_CONTENT_TYPE = 'wrong Content-Type';
 export const NOT_EXISTS = resource => `${resource} doesn't exist!`;
-
-

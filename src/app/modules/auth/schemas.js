@@ -1,6 +1,5 @@
 import { REQUIRED } from '../../configs/constants';
 
-
 export default {
     auth: {
         validation: {
@@ -78,5 +77,19 @@ export default {
                 },
             },
         },
+    },
+
+    reset: {
+        password: {
+            in: 'body',
+            trim: true,
+            isLength: {
+                errorMessage: REQUIRED('password'),
+                options: { min: 6 }
+            },
+            notEmpty: {
+                errorMessage: REQUIRED('password')
+            },
+        }
     }
 };
