@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../configs/database');
+import { DataTypes } from'sequelize';
+import sequelize from'../configs/database';
+import Recipe from './recipe';
 
 const User = sequelize.define('user', {
     id: {
@@ -47,6 +48,15 @@ const User = sequelize.define('user', {
     verifyToken: {
         type: DataTypes.STRING
     },
+});
+
+User.hasMany(Recipe,{
+    foreignKey: {
+        name: 'userId',
+        allowNull: false
+    },
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
 });
 
 module.exports = User;

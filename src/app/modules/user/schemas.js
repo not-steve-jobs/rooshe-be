@@ -1,7 +1,13 @@
 import { REQUIRED } from '../../configs/constants';
 
 export default {
+    auth: {
+        authentication: true,
+    },
+
     user: {
+        authentication: true,
+
         validation: {
             firstName: {
                 in: 'body',

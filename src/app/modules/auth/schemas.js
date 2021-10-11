@@ -2,6 +2,25 @@ import { REQUIRED } from '../../configs/constants';
 
 export default {
     auth: {
+        authentication: true,
+    },
+
+    reset: {
+        password: {
+            in: 'body',
+            trim: true,
+            String: true,
+            isLength: {
+                errorMessage: REQUIRED('password'),
+                options: { min: 6 }
+            },
+            notEmpty: {
+                errorMessage: REQUIRED('password')
+            },
+        }
+    },
+
+    signup: {
         validation: {
             firstName: {
                 in: 'body',
@@ -77,19 +96,6 @@ export default {
                 },
             },
         },
-    },
-
-    reset: {
-        password: {
-            in: 'body',
-            trim: true,
-            isLength: {
-                errorMessage: REQUIRED('password'),
-                options: { min: 6 }
-            },
-            notEmpty: {
-                errorMessage: REQUIRED('password')
-            },
-        }
     }
+
 };

@@ -5,9 +5,7 @@ import enableModules from './modules';
 import expressValidator  from 'express-validator';
 import cookieParser from 'cookie-parser';
 
-
 import errorHandler from './middlewares/errorHandler';
-
 
 class Application {
     app;
@@ -27,10 +25,10 @@ class Application {
 
     configApp() {
         this.app.use(expressValidator())
-            .use(json())
-            .use(urlencoded({ extended: true }))
-            .use(cookieParser())
-            .use(helmet())
+                .use(json())
+                .use(urlencoded({ extended: true }))
+                .use(cookieParser())
+                .use(helmet());
     }
     setParams() {
         this.app.set('json spaces', 4);

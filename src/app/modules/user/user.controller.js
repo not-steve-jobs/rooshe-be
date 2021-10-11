@@ -8,9 +8,9 @@ export class UserController {
 
     async update(req, res, next) {
         try {
-            const body = req.body;
+            const data = req.body;
             const param = req.params;
-            const user = await UserService.update({ body, param });
+            const user = await UserService.update({ data, param });
 
             return res.status(SUCCESS_CODE).json(user);
         }catch (e) {

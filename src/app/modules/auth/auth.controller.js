@@ -5,7 +5,7 @@ import {
 } from '../../configs/status-codes';
 import AuthService from '../../services/auth.service';
 import MailService from '../../services/mail.service';
-import crypto from "crypto";
+import crypto from 'crypto';
 
 export class AuthController {
 

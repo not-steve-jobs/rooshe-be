@@ -1,4 +1,5 @@
 import validator from './validator';
+import auth from './auth';
 
 export default (schemas, actionName) => {
     let middlewares = [];
@@ -9,8 +10,9 @@ export default (schemas, actionName) => {
     if (schemas[actionName].validation) {
         middlewares.push(validator(schemas[actionName].validation));
     }
-    if (schemas[actionName].authorization) {
-        middlewares.push(validator(schemas[actionName].authorization));
+    if (schemas[actionName].authentication) {
+        middlewares.push(auth());
     }
+
     return middlewares;
 };

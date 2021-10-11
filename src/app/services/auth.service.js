@@ -1,6 +1,6 @@
 import User from '../models/user';
-import { BadRequest, Conflict, NotFound } from '../errors';
-import { NOT_EXISTS, INVALID } from '../configs/constants';
+import { BadRequest, Conflict, NotFound, ValidationError } from '../errors';
+import { INVALID, NOT_EXISTS } from '../configs/constants';
 import { Util } from '../helpers/util';
 
 class AuthService {
@@ -12,13 +12,12 @@ class AuthService {
             }
         });
         if (user)  {throw new Conflict('user is created');}
-        const createdUser = await User.create({
+
+        return await User.create({
             ...body,
             verifyToken,
             password: Util.generateHash(body.password)
         });
-
-        return createdUser;
     }
 
     async login({ email, password }) {
@@ -27,12 +26,14 @@ class AuthService {
                 email
             }
         });
+        const isVerify = await Util.validateHash(password,user.password);
+        // if user enter invalid email, shows another error  (_task)
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
-        }
-        const isVerify = Util.validateHash(password,user.password);
-        if(!isVerify) {
+        } else if (!isVerify) {
             throw new BadRequest(INVALID('password'));
+        } else if (user.status === 'inactive') {
+            throw new ValidationError('please check yor email');
         }
 
         return {
@@ -74,7 +75,7 @@ class AuthService {
 
         return user;
     }
-
+    // dont work validation  (_task)
     async resetPassEmail({ id, body }) {
         const user = await User.findOne({
             where: {
@@ -84,7 +85,7 @@ class AuthService {
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
         }
-        user.password = Util.generateHash(body.password);
+        user.password = await Util.generateHash(body.password);
         user.verifyToken = null;
         await user.save();
 
