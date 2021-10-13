@@ -1,8 +1,8 @@
 import { DataTypes } from'sequelize';
 import sequelize from'../configs/database';
-import User from './user';
+import User from '../modules/user';
 
-const Recipe = sequelize.define('userRecipe', {
+const Homecook = sequelize.define('homecook', {
     id: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -10,62 +10,45 @@ const Recipe = sequelize.define('userRecipe', {
         defaultValue: DataTypes.UUIDV1,
         unique: true
     },
-    name: {
+    grade: {
         type: DataTypes.STRING,
-        allowNull: false,
+        defaultValue: 0
     },
-    video: {
+    profile_video: {
         type: DataTypes.STRING,
-        allowNull: false,
+        defaultValue: 0
     },
-    cover: {
+    profile_photo: {
         type: DataTypes.STRING,
-        allowNull: false,
+        defaultValue: 0
     },
-    price: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    cookTime: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    portion: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    viewCount: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-    },
-    likeCount: {
+    review_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    shareCount: {
+    comment_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    commentCount: {
+    profile_view_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    rating: {
-        type: DataTypes.DECIMAL(10,2),
-        defaultValue: 0
-    },
-    reviewCount: {
+    like_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    order_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    follow_count: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    }
 });
-
-Recipe.associate = () => {
-    Recipe.belongsTo(User,{
+Homecook.associate = () => {
+    Homecook.belongsTo(User,{
         foreignKey: {
             name: 'userId',
             allowNull: false
@@ -75,4 +58,4 @@ Recipe.associate = () => {
     });
 };
 
-module.exports = Recipe;
+module.exports = Homecook;

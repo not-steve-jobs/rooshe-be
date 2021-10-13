@@ -6,17 +6,19 @@ export default {
     },
 
     reset: {
-        password: {
-            in: 'body',
-            trim: true,
-            String: true,
-            isLength: {
-                errorMessage: REQUIRED('password'),
-                options: { min: 6 }
-            },
-            notEmpty: {
-                errorMessage: REQUIRED('password')
-            },
+        validation: {
+            password: {
+                in: 'body',
+                trim: true,
+                String: true,
+                isLength: {
+                    errorMessage: REQUIRED('password'),
+                    options: { min: 6 }
+                },
+                notEmpty: {
+                    errorMessage: REQUIRED('password')
+                },
+            }
         }
     },
 

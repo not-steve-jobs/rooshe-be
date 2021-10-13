@@ -10,24 +10,23 @@ class RecipeService {
         });
     }
 
-    async update ({ data, user }) {
+    async update (req) {
+        const _id = req.params.id;
+        const data = req.body;
         let recipe = await Recipe.findOne({
-            where: { userId: user.id }
+            where: { id: _id }
         });
         if (!recipe) {
             throw new NotFound('recipe not found');
         }
         recipe = { data };
-        await recipe.save();
 
         return recipe;
     }
 
-    async delete (user) {
+    async delete (params) {
         return await Recipe.destroy({
-            where: {
-                userId: user.id
-            }
+            where: { id: params.id }
         });
     }
 

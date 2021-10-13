@@ -75,7 +75,6 @@ class AuthService {
 
         return user;
     }
-    // dont work validation  (_task)
     async resetPassEmail({ id, body }) {
         const user = await User.findOne({
             where: {

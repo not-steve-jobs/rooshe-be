@@ -15,9 +15,9 @@ export class RecipeController {
         }
     }
 
-    async update ({ body: data, user }, res, next) {
+    async update (req, res, next) {
         try {
-            const recipe = await RecipeService.update({ data, user });
+            const recipe = await RecipeService.update(req);
 
             return res.status(SUCCESS_CODE).json(recipe);
         } catch (e) {
@@ -25,9 +25,9 @@ export class RecipeController {
         }
     }
 
-    async delete ({ user }, res, next) {
+    async delete ({ params }, res, next) {
         try {
-            await RecipeService.delete({ user });
+            await RecipeService.delete(params);
 
             return res.status(SUCCESS_CODE).json('Recipe deleted');
         } catch (e) {
@@ -45,9 +45,9 @@ export class RecipeController {
         }
     }
 
-    async getAllRecep ({ user }, res, next) {
+    async getAllRecep (req, res, next) {
         try{
-            const allRecep = await RecipeService.getAllRecep(user);
+            const allRecep = await RecipeService.getAllRecep();
 
             return res.status(SUCCESS_CODE).json(allRecep);
         } catch (e) {
