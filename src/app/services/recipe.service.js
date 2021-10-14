@@ -4,9 +4,10 @@ import { NotFound } from '../errors';
 class RecipeService {
 
     async create ({ data, user }) {
+
         return await Recipe.create({
             ...data,
-            userId: user.id
+            user_id: user.id
         });
     }
 
@@ -45,7 +46,7 @@ class RecipeService {
 
     async getAllRecepWitchThisUSer(user) {
         return Recipe.findAll({
-            where: { userId: user.id }
+            where: { user_id: user.id }
         });
     }
 }

@@ -24,7 +24,7 @@ export default {
 
     signup: {
         validation: {
-            firstName: {
+            first_name: {
                 in: 'body',
                 trim: true,
                 String: true,
@@ -36,7 +36,7 @@ export default {
                     errorMessage: REQUIRED('first_name')
                 },
             },
-            lastName: {
+            last_name: {
                 in: 'body',
                 trim: true,
                 String: true,
@@ -94,7 +94,7 @@ export default {
                 in: 'body',
                 trim: true,
                 notEmpty: {
-                    errorMessage: REQUIRED('bDay')
+                    errorMessage: REQUIRED('address')
                 },
             },
         },

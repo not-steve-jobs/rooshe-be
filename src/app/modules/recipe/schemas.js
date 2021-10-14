@@ -25,7 +25,7 @@ export default {
                     errorMessage: REQUIRED('price')
                 },
             },
-            cookTime: {
+            cook_time: {
                 in: 'body',
                 trim: true,
                 notEmpty: {

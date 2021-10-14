@@ -2,7 +2,7 @@ import { DataTypes } from'sequelize';
 import sequelize from'../configs/database';
 import User from './user';
 
-const Recipe = sequelize.define('userRecipe', {
+const Recipe = sequelize.define('user_recipe', {
     id: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -26,31 +26,31 @@ const Recipe = sequelize.define('userRecipe', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    cookTime: {
+    cook_time: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     portion: {
-        type: DataTypes.STRING,
+        type: DataTypes.SMALLINT,
         allowNull: false,
     },
     description: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    viewCount: {
+    view_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0,
     },
-    likeCount: {
+    like_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    shareCount: {
+    share_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    commentCount: {
+    comment_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
@@ -58,7 +58,7 @@ const Recipe = sequelize.define('userRecipe', {
         type: DataTypes.DECIMAL(10,2),
         defaultValue: 0
     },
-    reviewCount: {
+    review_count: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
@@ -67,7 +67,7 @@ const Recipe = sequelize.define('userRecipe', {
 Recipe.associate = () => {
     Recipe.belongsTo(User,{
         foreignKey: {
-            name: 'userId',
+            name: 'user_id',
             allowNull: false
         },
         onDelete: 'CASCADE',

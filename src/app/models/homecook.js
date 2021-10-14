@@ -3,24 +3,15 @@ import sequelize from'../configs/database';
 import User from '../modules/user';
 
 const Homecook = sequelize.define('homecook', {
-    id: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        primaryKey: true,
-        defaultValue: DataTypes.UUIDV1,
-        unique: true
-    },
     grade: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         defaultValue: 0
     },
     profile_video: {
-        type: DataTypes.STRING,
-        defaultValue: 0
+        type: DataTypes.STRING
     },
     profile_photo: {
         type: DataTypes.STRING,
-        defaultValue: 0
     },
     review_count: {
         type: DataTypes.INTEGER,
@@ -50,7 +41,7 @@ const Homecook = sequelize.define('homecook', {
 Homecook.associate = () => {
     Homecook.belongsTo(User,{
         foreignKey: {
-            name: 'userId',
+            name: 'user_id',
             allowNull: false
         },
         onDelete: 'CASCADE',

@@ -1,6 +1,9 @@
 {
   "name": "account-management-backend-level-3",
   "version": "0.0.1",
+  "engines": {
+    "node": "14.17.6"
+  },
   "scripts": {
     "lint": "eslint .",
     "test": "cypress run",

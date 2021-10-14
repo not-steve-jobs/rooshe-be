@@ -5,17 +5,17 @@ import Homecook from './homecook';
 
 const User = sequelize.define('user', {
     id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV1,
         unique: true
     },
-    firstName: {
+    first_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    lastName: {
+    last_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -35,7 +35,7 @@ const User = sequelize.define('user', {
         type: DataTypes.DATE,
         allowNull: false,
     },
-    isHomeCook: {
+    is_homecook: {
         type: DataTypes.TINYINT,
         defaultValue: 0
     },
@@ -49,11 +49,17 @@ const User = sequelize.define('user', {
     verifyToken: {
         type: DataTypes.STRING
     },
+    lat: {
+        type: DataTypes.STRING
+    },
+    lon: {
+        type: DataTypes.STRING
+    }
 });
 
 User.hasMany(Recipe,{
     foreignKey: {
-        name: 'userId',
+        name: 'user_id',
         allowNull: false
     },
     onDelete: 'CASCADE',
