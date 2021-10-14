@@ -5,29 +5,24 @@ import { Util } from '../helpers/util';
 
 class AuthService {
 
-    async signup({ body, verifyToken }) {
+    async signup({ data, verifyToken }) {
         const user = await User.findOne({
-            where: {
-                email: body.email
-            }
+            where: { email: data.email }
         });
         if (user)  {throw new Conflict('user is created');}
 
         return await User.create({
-            ...body,
+            ...data,
             verifyToken,
-            password: Util.generateHash(body.password)
+            password: Util.generateHash(data.password)
         });
     }
 
     async login({ email, password }) {
         const user = await User.findOne({
-            where: {
-                email
-            }
+            where: { email }
         });
         const isVerify = await Util.validateHash(password,user.password);
-        // if user enter invalid email, shows another error  (_task)
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
         } else if (!isVerify) {
@@ -42,30 +37,25 @@ class AuthService {
         };
     }
 
-    async verifyEmail(id) {
+    async verifyEmail(_token) {
         const user = await User.findOne({
-            where: {
-                verifyToken: id
-            }
+            where: { verifyToken: _token }
         });
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
         } else if(user.status === 'active') {
             throw new Conflict('User has been already verified. Please Login');
-        } else {
-            user.status = 'active';
-            user.verifyToken = null;
-            await user.save();
         }
+        user.status = 'active';
+        user.verifyToken = null;
+        await user.save();
 
         return user;
     }
 
     async forgotPassEmail({ email, verifyTokenReset }) {
         const user = await User.findOne({
-            where: {
-                email
-            }
+            where: { email }
         });
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
@@ -75,16 +65,14 @@ class AuthService {
 
         return user;
     }
-    async resetPassEmail({ id, body }) {
+    async resetPassEmail(data) {
         const user = await User.findOne({
-            where: {
-                verifyToken: id
-            }
+            where: { verifyToken: data._token }
         });
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
         }
-        user.password = await Util.generateHash(body.password);
+        user.password = await Util.generateHash(data.password);
         user.verifyToken = null;
         await user.save();
 

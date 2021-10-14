@@ -1,9 +1,6 @@
-import {
-    CREATED_CODE,
-    NO_CONTENT_CODE,
-    SUCCESS_CODE
-} from '../../configs/status-codes';
+import { SUCCESS_CODE } from '../../configs/status-codes';
 import UserService from '../../services/user.service';
+
 export class UserController {
 
     async update(req, res, next) {

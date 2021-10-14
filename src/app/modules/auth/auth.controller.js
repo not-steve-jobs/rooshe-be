@@ -1,20 +1,15 @@
-import {
-    CREATED_CODE,
-    NO_CONTENT_CODE,
-    SUCCESS_CODE
-} from '../../configs/status-codes';
+import { SUCCESS_CODE } from '../../configs/status-codes';
 import AuthService from '../../services/auth.service';
 import MailService from '../../services/mail.service';
-import crypto from 'crypto';
 
 export class AuthController {
 
     async signup(req, res, next) {
         try {
-            const verifyToken = crypto.randomBytes(16).toString('hex');
-            const body = req.body;
-            const email = body.email;
-            const user = await AuthService.signup({ body, verifyToken });
+            const verifyToken = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+            const data = req.body;
+            const email = data.email;
+            const user = await AuthService.signup({ data, verifyToken });
             await MailService.sendVerifyURI({ email, verifyToken });
 
             return res.status(SUCCESS_CODE).json(user);
@@ -36,8 +31,8 @@ export class AuthController {
 
     async verifyEmail(req, res, next) {
         try{
-            const { id } = req.params;
-            const user = await AuthService.verifyEmail(id);
+            const _token = req.body._token;
+            const user = await AuthService.verifyEmail(_token);
 
             return res.status(SUCCESS_CODE).json(user);
         } catch (e) {
@@ -48,7 +43,7 @@ export class AuthController {
     async forgotPassEmail(req, res, next) {
         try {
             const email = req.body.email;
-            const verifyTokenReset = crypto.randomBytes(16).toString('hex');
+            const verifyTokenReset = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
             const user = await AuthService.forgotPassEmail({ email, verifyTokenReset });
             await MailService.sendResetVerifyURI(user);
 
@@ -60,9 +55,8 @@ export class AuthController {
 
     async resetPassEmail(req, res, next) {
         try {
-            const { id } = req.params;
-            const body = req.body;
-            await AuthService.resetPassEmail({ id, body });
+            const data = req.body;
+            await AuthService.resetPassEmail(data);
 
             return res.status(SUCCESS_CODE).json('your password reset');
         }catch (e) {
