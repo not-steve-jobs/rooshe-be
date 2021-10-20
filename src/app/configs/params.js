@@ -2,7 +2,7 @@ import {
     apiPort,
     dbHost, dbUser, dbPassword, dbPort, db,
     tokenKey,
-    emailUser, emailPassword
+    emailUser, emailPassword, testEmailUser, testEmailPassword
 } from '../helpers/config';
 
 const params = {
@@ -15,7 +15,9 @@ const params = {
         dbPort,
         tokenKey,
         emailUser,
-        emailPassword
+        emailPassword,
+        testEmailUser,
+        testEmailPassword
     },
     production: {
         apiPort,
@@ -26,7 +28,9 @@ const params = {
         dbPort,
         tokenKey,
         emailUser,
-        emailPassword
+        emailPassword,
+        testEmailUser,
+        testEmailPassword
     }
 };
 export default params[process.env.NODE_ENV || 'development'];
