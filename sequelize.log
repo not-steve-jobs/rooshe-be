@@ -9454,3 +9454,488 @@
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD `user_id` INTEGER NOT NULL, ADD CONSTRAINT `user_recipes_user_id_foreign_idx` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `homecooks`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'homecooks' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `grade` `grade` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_video` `profile_video` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_photo` `profile_photo` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_view_count` `profile_view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `order_count` `order_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `follow_count` `follow_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='homecooks' AND constraint_name = 'homecooks_ibfk_1' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` DROP FOREIGN KEY `homecooks_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` ADD FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`first_name`,`last_name`,`email`,`password`,`phone`,`bDay`,`is_homecook`,`status`,`address`,`verifyToken`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`verifyToken` = '143109' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `status`=?,`verifyToken`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='user_recipes' AND constraint_name = 'user_recipes_user_id_foreign_idx' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` DROP FOREIGN KEY `user_recipes_user_id_foreign_idx`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='user_recipes' AND constraint_name = 'user_recipes_ibfk_1' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` DROP FOREIGN KEY `user_recipes_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='user_recipes' AND constraint_name = 'user_recipes_ibfk_1' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` DROP FOREIGN KEY `user_recipes_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='user_recipes' AND constraint_name = 'user_recipes_ibfk_1' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` DROP FOREIGN KEY `user_recipes_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `homecooks`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'homecooks' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `grade` `grade` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_video` `profile_video` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_photo` `profile_photo` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_view_count` `profile_view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `order_count` `order_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `follow_count` `follow_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE (REFERENCED_TABLE_NAME = 'homecooks' AND REFERENCED_TABLE_SCHEMA = 'test_db' AND REFERENCED_COLUMN_NAME = 'userId') OR (TABLE_NAME = 'homecooks' AND TABLE_SCHEMA = 'test_db' AND COLUMN_NAME = 'userId' AND REFERENCED_TABLE_NAME IS NOT NULL)"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` DROP FOREIGN KEY `homecooks_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` DROP `userId`;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `users`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `first_name` `first_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `last_name` `last_name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `email` `email` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `phone` `phone` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `bDay` `bDay` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `is_homecook` `is_homecook` TINYINT DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `status` `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `address` `address` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `verifyToken` `verifyToken` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lat` `lat` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `lon` `lon` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `user_recipes`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'user_recipes' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `name` `name` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `video` `video` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cover` `cover` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `price` `price` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `cook_time` `cook_time` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `portion` `portion` SMALLINT NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `description` `description` VARCHAR(255) NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `view_count` `view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `share_count` `share_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `rating` `rating` DECIMAL(10,2) DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_CATALOG AS constraintCatalog, CONSTRAINT_NAME AS constraintName, CONSTRAINT_SCHEMA AS constraintSchema, CONSTRAINT_TYPE AS constraintType, TABLE_NAME AS tableName, TABLE_SCHEMA AS tableSchema from INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE table_name='user_recipes' AND constraint_name = 'user_recipes_ibfk_1' AND TABLE_SCHEMA = 'test_db';"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` DROP FOREIGN KEY `user_recipes_ibfk_1`;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `user_recipes` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW FULL COLUMNS FROM `homecooks`;"}
+{"level":"debug","message":"Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'homecooks' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='test_db' AND REFERENCED_TABLE_NAME IS NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` ADD `userId` INTEGER NOT NULL, ADD CONSTRAINT `homecooks_userId_foreign_idx` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `grade` `grade` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_video` `profile_video` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_photo` `profile_photo` VARCHAR(255);"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `review_count` `review_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `comment_count` `comment_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `profile_view_count` `profile_view_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `like_count` `like_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `order_count` `order_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `follow_count` `follow_count` INTEGER DEFAULT 0;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): ALTER TABLE `homecooks` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`first_name`,`last_name`,`email`,`password`,`phone`,`bDay`,`is_homecook`,`status`,`address`,`verifyToken`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`verifyToken` = '321408' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `status`=?,`verifyToken`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homecook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homecook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homecooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homecooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homecooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homeCook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homeCooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homeCooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homeCook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homeCooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homeCooks`"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`first_name`,`last_name`,`email`,`password`,`phone`,`bDay`,`is_homeCook`,`status`,`address`,`verifyToken`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`verifyToken` = '899099' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `status`=?,`verifyToken`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homeCook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homeCooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homeCooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homeCook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homeCooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homeCooks`"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `users`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER NOT NULL auto_increment UNIQUE , `first_name` VARCHAR(255) NOT NULL, `last_name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255) NOT NULL, `bDay` DATETIME NOT NULL, `is_homeCook` TINYINT DEFAULT 0, `status` ENUM('active', 'inactive', 'suspended') DEFAULT 'inactive', `address` VARCHAR(255), `verifyToken` VARCHAR(255), `lat` VARCHAR(255), `lon` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `users`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `user_recipes`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `user_recipes` (`id` CHAR(36) BINARY NOT NULL UNIQUE , `name` VARCHAR(255) NOT NULL, `video` VARCHAR(255) NOT NULL, `cover` VARCHAR(255) NOT NULL, `price` VARCHAR(255) NOT NULL, `cook_time` VARCHAR(255) NOT NULL, `portion` SMALLINT NOT NULL, `description` VARCHAR(255) NOT NULL, `view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `share_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `rating` DECIMAL(10,2) DEFAULT 0, `review_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `user_recipes`"}
+{"level":"debug","message":"Executing (default): DROP TABLE IF EXISTS `homeCooks`;"}
+{"level":"debug","message":"Executing (default): CREATE TABLE IF NOT EXISTS `homeCooks` (`id` INTEGER NOT NULL auto_increment , `grade` INTEGER DEFAULT 0, `profile_video` VARCHAR(255), `profile_photo` VARCHAR(255), `review_count` INTEGER DEFAULT 0, `comment_count` INTEGER DEFAULT 0, `profile_view_count` INTEGER DEFAULT 0, `like_count` INTEGER DEFAULT 0, `order_count` INTEGER DEFAULT 0, `follow_count` INTEGER DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;"}
+{"level":"debug","message":"Executing (default): SHOW INDEX FROM `homeCooks`"}

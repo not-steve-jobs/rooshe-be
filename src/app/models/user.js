@@ -1,7 +1,7 @@
 import { DataTypes } from'sequelize';
 import sequelize from'../configs/database';
 import Recipe from './recipe';
-import Homecook from './homecook';
+import HomeCook from './homeCook';
 
 const User = sequelize.define('user', {
     id: {
@@ -35,7 +35,7 @@ const User = sequelize.define('user', {
         type: DataTypes.DATE,
         allowNull: false,
     },
-    is_homecook: {
+    is_homeCook: {
         type: DataTypes.TINYINT,
         defaultValue: 0
     },
@@ -65,9 +65,10 @@ User.hasMany(Recipe,{
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
 });
-User.hasOne(Homecook,{
+
+User.hasOne(HomeCook,{
     foreignKey: {
-        name: 'userId',
+        name: 'user_id',
         allowNull: false
     },
     onDelete: 'CASCADE',

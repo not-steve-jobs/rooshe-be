@@ -2,7 +2,7 @@ import { DataTypes } from'sequelize';
 import sequelize from'../configs/database';
 import User from '../modules/user';
 
-const Homecook = sequelize.define('homecook', {
+const HomeCook = sequelize.define('homeCook', {
     grade: {
         type: DataTypes.INTEGER,
         defaultValue: 0
@@ -38,8 +38,9 @@ const Homecook = sequelize.define('homecook', {
         defaultValue: 0
     }
 });
-Homecook.associate = () => {
-    Homecook.belongsTo(User,{
+
+HomeCook.associate = () => {
+    HomeCook.belongsTo(User,{
         foreignKey: {
             name: 'user_id',
             allowNull: false
@@ -49,4 +50,4 @@ Homecook.associate = () => {
     });
 };
 
-module.exports = Homecook;
+module.exports = HomeCook;
