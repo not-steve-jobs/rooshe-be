@@ -1,16 +1,16 @@
-import { DataTypes } from'sequelize';
-import sequelize from'../configs/database';
+import { DataTypes } from 'sequelize';
+import sequelize from '../configs/database';
 import User from './user';
 
-const Recipe = sequelize.define('user_recipe', {
+const Recipe = sequelize.define('recipe', {
     id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV1,
         unique: true
     },
-    name: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -62,6 +62,12 @@ const Recipe = sequelize.define('user_recipe', {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    ingredients: {
+        type: DataTypes.STRING
+    },
+    status: {
+        type: DataTypes.ENUM('active', 'inactive', 'unpublished')
+    }
 });
 
 Recipe.associate = () => {

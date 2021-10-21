@@ -1,5 +1,5 @@
-import { DataTypes } from'sequelize';
-import sequelize from'../configs/database';
+import { DataTypes } from 'sequelize';
+import sequelize from '../configs/database';
 import Recipe from './recipe';
 import HomeCook from './homeCook';
 
@@ -53,6 +53,12 @@ const User = sequelize.define('user', {
         type: DataTypes.STRING
     },
     lon: {
+        type: DataTypes.STRING
+    },
+    gender: {
+        type: DataTypes.ENUM('male', 'female')
+    },
+    profile_photo: {
         type: DataTypes.STRING
     }
 });

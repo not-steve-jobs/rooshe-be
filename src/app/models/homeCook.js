@@ -1,17 +1,17 @@
-import { DataTypes } from'sequelize';
-import sequelize from'../configs/database';
-import User from '../modules/user';
+import { DataTypes } from 'sequelize';
+import sequelize from '../configs/database';
+import User from './user';
 
-const HomeCook = sequelize.define('homeCook', {
+const HomeCook = sequelize.define('homecook', {
     grade: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    status: {
+        type: DataTypes.ENUM('active', 'live', 'offline')
+    },
     profile_video: {
         type: DataTypes.STRING
-    },
-    profile_photo: {
-        type: DataTypes.STRING,
     },
     review_count: {
         type: DataTypes.INTEGER,
