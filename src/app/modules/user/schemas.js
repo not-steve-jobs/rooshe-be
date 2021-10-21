@@ -9,7 +9,7 @@ export default {
         authentication: true,
 
         validation: {
-            firstName: {
+            first_name: {
                 in: 'body',
                 trim: true,
                 String: true,
@@ -21,7 +21,7 @@ export default {
                     errorMessage: REQUIRED('first_name')
                 },
             },
-            lastName: {
+            last_name: {
                 in: 'body',
                 trim: true,
                 String: true,
@@ -43,17 +43,6 @@ export default {
                 },
                 notEmpty: {
                     errorMessage: REQUIRED('email')
-                },
-            },
-            password: {
-                in: 'body',
-                trim: true,
-                isLength: {
-                    errorMessage: REQUIRED('password'),
-                    options: { min: 6 }
-                },
-                notEmpty: {
-                    errorMessage: REQUIRED('password')
                 },
             },
             phone: {

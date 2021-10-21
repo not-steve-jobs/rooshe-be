@@ -1,6 +1,14 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
+// Models
 import User from './user';
+import UserBasket from './userBasket';
+import SavedRecipe from './savedRecipe';
+import RecipeLikes from  './recipeLikes';
+import UserHashtags from './userHashtags';
+import RecipeReviews from './recipeReviews';
+import RecipeComments from './recipeComments';
+import UserRecipeCategories from './userRecipeCategories';
 
 const Recipe = sequelize.define('recipe', {
     id: {
@@ -74,6 +82,69 @@ Recipe.associate = () => {
     Recipe.belongsTo(User,{
         foreignKey: {
             name: 'user_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(RecipeComments,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(RecipeLikes,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(RecipeReviews,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(SavedRecipe,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(UserBasket,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(UserHashtags,{
+        foreignKey: {
+            name: 'recipe_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    Recipe.hasOne(UserRecipeCategories,{
+        foreignKey: {
+            name: 'recipe_id',
             allowNull: false
         },
         onDelete: 'CASCADE',

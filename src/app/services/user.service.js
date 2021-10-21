@@ -4,16 +4,10 @@ import { NotFound } from '../errors';
 class UserService {
 
     async update({ data, param }) {
-        let user = await User.findOne({
-            where: { id: param.id }
-        });
-        if (!user) { throw new NotFound('user not found'); }
-        user = {
-            ...data
-        };
-        await user.save();
-
-        return user;
+        return await User.update(
+            { ...data },
+            { where: { id: param.id } }
+        );
     }
 
     async delete(param) {

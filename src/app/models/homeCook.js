@@ -1,6 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
+// Models
 import User from './user';
+import UserFollowers from './userFollowers';
 
 const HomeCook = sequelize.define('homecook', {
     grade: {
@@ -43,6 +45,15 @@ HomeCook.associate = () => {
     HomeCook.belongsTo(User,{
         foreignKey: {
             name: 'user_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    HomeCook.hasOne(UserFollowers,{
+        foreignKey: {
+            name: 'homecook_id',
             allowNull: false
         },
         onDelete: 'CASCADE',
