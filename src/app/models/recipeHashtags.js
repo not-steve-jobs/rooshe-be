@@ -18,7 +18,7 @@ const RecipeHashtags = sequelize.define('recipe_hashtags', {
 });
 
 RecipeHashtags.associate = () => {
-    RecipeHashtags.hasOne(UserHashtags,{
+    RecipeHashtags.hasMany(UserHashtags,{
         foreignKey: {
             name: 'user_hashtag_id',
             allowNull: false

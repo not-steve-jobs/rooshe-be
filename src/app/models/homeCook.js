@@ -2,9 +2,17 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
 // Models
 import User from './user';
+import Recipe from './recipe';
 import UserFollowers from './userFollowers';
 
 const HomeCook = sequelize.define('homecook', {
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        unique: true
+    },
     grade: {
         type: DataTypes.INTEGER,
         defaultValue: 0
@@ -51,9 +59,18 @@ HomeCook.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    HomeCook.hasOne(UserFollowers,{
+    HomeCook.hasMany(UserFollowers,{
         foreignKey: {
             name: 'homecook_id',
+            allowNull: false
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    });
+
+    HomeCook.hasMany(Recipe,{
+        foreignKey: {
+            name: 'user_id',
             allowNull: false
         },
         onDelete: 'CASCADE',

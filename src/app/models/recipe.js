@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
 // Models
-import User from './user';
+import HomeCook from './homeCook';
 import UserBasket from './userBasket';
 import SavedRecipe from './savedRecipe';
 import RecipeLikes from  './recipeLikes';
@@ -79,7 +79,8 @@ const Recipe = sequelize.define('recipe', {
 });
 
 Recipe.associate = () => {
-    Recipe.belongsTo(User,{
+
+    Recipe.belongsTo(HomeCook, {
         foreignKey: {
             name: 'user_id',
             allowNull: false
@@ -88,7 +89,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(RecipeComments,{
+    Recipe.hasMany(RecipeComments,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -97,7 +98,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(RecipeLikes,{
+    Recipe.hasMany(RecipeLikes,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -106,7 +107,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(RecipeReviews,{
+    Recipe.hasMany(RecipeReviews,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -115,7 +116,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(SavedRecipe,{
+    Recipe.hasMany(SavedRecipe,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -124,7 +125,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(UserBasket,{
+    Recipe.hasMany(UserBasket,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -133,7 +134,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(UserHashtags,{
+    Recipe.hasMany(UserHashtags,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false
@@ -142,7 +143,7 @@ Recipe.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    Recipe.hasOne(UserRecipeCategories,{
+    Recipe.hasMany(UserRecipeCategories,{
         foreignKey: {
             name: 'recipe_id',
             allowNull: false

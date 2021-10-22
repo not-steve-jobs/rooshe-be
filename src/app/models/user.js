@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
 // Models
-import Recipe from './recipe';
 import HomeCook from './homeCook';
 import UserBasket from './userBasket';
 import SavedRecipe from './savedRecipe';
@@ -70,15 +69,6 @@ const User = sequelize.define('user', {
     }
 });
 
-User.hasMany(Recipe,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
 User.hasOne(HomeCook,{
     foreignKey: {
         name: 'user_id',
@@ -88,7 +78,7 @@ User.hasOne(HomeCook,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(RecipeComments,{
+User.hasMany(RecipeComments,{
     foreignKey: {
         name: 'user_id',
         allowNull: false
@@ -97,7 +87,7 @@ User.hasOne(RecipeComments,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(RecipeLikes,{
+User.hasMany(RecipeLikes,{
     foreignKey: {
         name: 'user_id',
         allowNull: false
@@ -106,7 +96,7 @@ User.hasOne(RecipeLikes,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(RecipeReviews,{
+User.hasMany(RecipeReviews,{
     foreignKey: {
         name: 'user_id',
         allowNull: false
@@ -115,7 +105,7 @@ User.hasOne(RecipeReviews,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(SavedRecipe,{
+User.hasMany(SavedRecipe,{
     foreignKey: {
         name: 'user_id',
         allowNull: false
@@ -124,7 +114,7 @@ User.hasOne(SavedRecipe,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(UserBasket,{
+User.hasMany(UserBasket,{
     foreignKey: {
         name: 'user_id',
         allowNull: false
@@ -133,7 +123,7 @@ User.hasOne(UserBasket,{
     onUpdate: 'CASCADE',
 });
 
-User.hasOne(UserFollowers,{
+User.hasMany(UserFollowers,{
     foreignKey: {
         name: 'user_id',
         allowNull: false

@@ -18,7 +18,7 @@ const RecipeCategories = sequelize.define('recipe_categories', {
 });
 
 RecipeCategories.associate = () => {
-    RecipeCategories.hasOne(UserRecipeCategories,{
+    RecipeCategories.hasMany(UserRecipeCategories,{
         foreignKey: {
             name: 'recipe_category_id',
             allowNull: false
