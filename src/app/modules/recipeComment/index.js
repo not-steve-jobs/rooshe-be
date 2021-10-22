@@ -16,7 +16,7 @@ export default class Recipe {
     }
 
     assignRouter() {
-        this.apiRouter.use('/recipe-category', this.router);
+        this.apiRouter.use('/recipe-comment', this.router);
     }
 
     assignEndpoints() {

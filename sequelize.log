@@ -10777,3 +10777,79 @@
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
 {"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
 {"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 3"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `users` (`id`,`first_name`,`last_name`,`email`,`password`,`phone`,`bDay`,`is_homeCook`,`status`,`address`,`verifyToken`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`verifyToken` = '356697' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `status`=?,`verifyToken`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_categories` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): UPDATE `recipe_categories` SET `name`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): DELETE FROM `recipe_categories` WHERE `id` = '1'"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipe_comments` (`id`,`comment`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipes` (`id`,`title`,`video`,`cover`,`price`,`cook_time`,`portion`,`description`,`view_count`,`like_count`,`share_count`,`comment_count`,`rating`,`review_count`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipes` (`id`,`title`,`video`,`cover`,`price`,`cook_time`,`portion`,`description`,`view_count`,`like_count`,`share_count`,`comment_count`,`rating`,`review_count`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 4;"}
+{"level":"debug","message":"Executing (default): INSERT INTO `recipes` (`id`,`title`,`video`,`cover`,`price`,`cook_time`,`portion`,`description`,`view_count`,`like_count`,`share_count`,`comment_count`,`rating`,`review_count`,`createdAt`,`updatedAt`,`user_id`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}

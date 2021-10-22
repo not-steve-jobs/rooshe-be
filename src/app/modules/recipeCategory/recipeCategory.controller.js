@@ -15,9 +15,9 @@ export class RecipeCategoryController {
         }
     }
 
-    async update ({ body: data, param }, res, next) {
+    async update ({ body: data, params }, res, next) {
         try {
-            const recipeCategories = await RecipeCategoryService.update({ data, param });
+            const recipeCategories = await RecipeCategoryService.update({ data, params });
 
             return res.status(SUCCESS_CODE).json(recipeCategories);
         } catch (e) {
@@ -25,9 +25,9 @@ export class RecipeCategoryController {
         }
     }
 
-    async delete ({ param }, res, next) {
+    async delete ({ params }, res, next) {
         try {
-            const recipeCategories = await RecipeCategoryService.delete(param);
+            await RecipeCategoryService.delete(params);
 
             return res.status(SUCCESS_CODE).json('recipeCategorie deleted');
         } catch (e) {

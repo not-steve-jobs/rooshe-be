@@ -3,22 +3,19 @@ import RecipeCategories from '../models/recipeCategories';
 class RecipeCategoryService {
 
     async create(data) {
-
         return await RecipeCategories.create({ ...data });
     }
 
-    async update({ data, param }) {
-
+    async update({ data, params }) {
         return await RecipeCategories.update(
             { ...data },
-            { where: { id: param.id } }
+            { where: { id: params.id } }
         );
     }
 
-    async delete(param) {
-
+    async delete(params) {
         return await RecipeCategories.destroy({
-            where: { id: param.id }
+            where: { id: params.id }
         });
     }
 }

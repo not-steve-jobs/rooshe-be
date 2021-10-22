@@ -9,7 +9,7 @@ export default {
         authentication: true,
 
         validation: {
-            name: {
+            title: {
                 in: 'body',
                 trim: true,
                 String: true,
