@@ -3,16 +3,16 @@ import { NotFound } from '../errors';
 
 class UserService {
 
-    async update({ data, param }) {
+    async update({ data, _id }) {
         return await User.update(
             { ...data },
-            { where: { id: param.id } }
+            { where: { id: _id } }
         );
     }
 
-    async delete(param) {
+    async delete(_id) {
         return await User.destroy({
-            where: { id: param.id }
+            where: { id: _id }
         });
     }
 

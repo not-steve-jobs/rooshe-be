@@ -13,13 +13,13 @@ export default () => {
                     where: { id: decoded.id }
                 });
                 if (!user) {
-                    new AuthError(NOT_EXISTS('User does not exist!'));
+                    throw new AuthError(NOT_EXISTS('User does not exist!'));
                 }
                 req.user = user;
 
                 return next();
             }
-            new AuthError('Session Expired!');
+            throw new AuthError('Session Expired!');
 
         } catch (e) {
             next(e);

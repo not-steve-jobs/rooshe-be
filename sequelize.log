@@ -10755,3 +10755,25 @@
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
 {"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`email` = 'a@mail.ru' LIMIT 1;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user`;"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `first_name`=?,`last_name`=?,`email`=?,`phone`=?,`bDay`=?,`address`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `first_name`=?,`last_name`=?,`email`=?,`phone`=?,`bDay`=?,`address`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): UPDATE `users` SET `first_name`=?,`last_name`=?,`email`=?,`phone`=?,`bDay`=?,`address`=?,`updatedAt`=? WHERE `id` = ?"}
+{"level":"debug","message":"Executing (default): SELECT 1+1 AS result"}
+{"level":"debug","message":"Executing (default): SELECT `id`, `first_name`, `last_name`, `email`, `password`, `phone`, `bDay`, `is_homeCook`, `status`, `address`, `verifyToken`, `lat`, `lon`, `gender`, `profile_photo`, `createdAt`, `updatedAt` FROM `users` AS `user` WHERE `user`.`id` = 3;"}
+{"level":"debug","message":"Executing (default): DELETE FROM `users` WHERE `id` = 3"}
