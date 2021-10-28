@@ -20,6 +20,6 @@ const sequelize = new Sequelize(param.db, param.dbUser, param.dbPassword, {
         idle: 10000
     }
 });
-// sequelize.sync({ alter: true });
+sequelize.sync({ alter: true });
 
 module.exports = sequelize;

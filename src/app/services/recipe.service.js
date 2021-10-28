@@ -13,7 +13,7 @@ class RecipeService {
 
         return await Recipe.create({
             ...data,
-            user_id: homeCook.id
+            user_id: user.id
         });
     }
 

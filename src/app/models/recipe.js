@@ -75,7 +75,11 @@ const Recipe = sequelize.define('recipe', {
     },
     status: {
         type: DataTypes.ENUM('active', 'inactive', 'unpublished')
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
     }
+
 });
 
 Recipe.associate = () => {

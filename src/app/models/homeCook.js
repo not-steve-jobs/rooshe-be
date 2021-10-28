@@ -5,7 +5,7 @@ import User from './user';
 import Recipe from './recipe';
 import UserFollowers from './userFollowers';
 
-const HomeCook = sequelize.define('homecook', {
+const homeCook = sequelize.define('homecook', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -18,7 +18,8 @@ const HomeCook = sequelize.define('homecook', {
         defaultValue: 0
     },
     status: {
-        type: DataTypes.ENUM('active', 'live', 'offline')
+        type: DataTypes.ENUM('active', 'live', 'offline'),
+        defaultValue: 'offline'
     },
     profile_video: {
         type: DataTypes.STRING
@@ -49,8 +50,8 @@ const HomeCook = sequelize.define('homecook', {
     }
 });
 
-HomeCook.associate = () => {
-    HomeCook.belongsTo(User,{
+homeCook.associate = () => {
+    homeCook.belongsTo(User,{
         foreignKey: {
             name: 'user_id',
             allowNull: false
@@ -59,7 +60,7 @@ HomeCook.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    HomeCook.hasMany(UserFollowers,{
+    homeCook.hasMany(UserFollowers,{
         foreignKey: {
             name: 'homecook_id',
             allowNull: false
@@ -68,7 +69,7 @@ HomeCook.associate = () => {
         onUpdate: 'CASCADE',
     });
 
-    HomeCook.hasMany(Recipe,{
+    homeCook.hasMany(Recipe,{
         foreignKey: {
             name: 'user_id',
             allowNull: false
@@ -78,4 +79,4 @@ HomeCook.associate = () => {
     });
 };
 
-module.exports = HomeCook;
+module.exports = homeCook;

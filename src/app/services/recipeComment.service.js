@@ -6,7 +6,7 @@ class RecipeCommentsService {
         return await RecipeComments.create({
             comment: data.comment,
             recipe_id: data.recipe.id,
-            // parrent_id: data.parrent.id,
+            parrent_id: data.parrent.id,
             user_id: _id
         });
     }
