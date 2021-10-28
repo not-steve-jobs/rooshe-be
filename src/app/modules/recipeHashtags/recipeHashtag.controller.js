@@ -7,8 +7,7 @@ export class RecipeHashtagController {
 
     async create(req, res, next) {
         try {
-            const data = req.body;
-            const hashtag = await RecipeHashtagService.create(data);
+            const hashtag = await RecipeHashtagService.create(req.body);
 
             return res.status(SUCCESS_CODE).json(hashtag);
         } catch (e) {

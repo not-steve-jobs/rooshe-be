@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import authEndpoints from './endpoints';
+import recipeActionsEndpoints from './endpoints';
 
-export default class HomeCook {
+export default class RecipeLikes {
     apiRouter;
     router;
 
@@ -16,10 +16,10 @@ export default class HomeCook {
     }
 
     assignRouter() {
-        this.apiRouter.use('/homecook', this.router);
+        this.apiRouter.use('/recipe-like', this.router);
     }
 
     assignEndpoints() {
-        authEndpoints(this.router);
+        recipeActionsEndpoints(this.router);
     }
 }
