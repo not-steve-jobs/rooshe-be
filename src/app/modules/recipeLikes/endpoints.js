@@ -5,5 +5,5 @@ const recipeLikeController = new RecipeLikeController();
 
 export default (router) => {
     router.post('/', ...middlewares(schemas, 'auth'), recipeLikeController.like);
-    router.delete('/:id', ...middlewares(schemas, 'auth'), recipeLikeController.disLike);
+    router.delete('/', ...middlewares(schemas, 'auth'), recipeLikeController.disLike);
 };
