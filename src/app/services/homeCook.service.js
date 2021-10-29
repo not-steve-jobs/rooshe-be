@@ -1,7 +1,7 @@
 import { User } from '../models/associations';
 import { HomeCook } from '../models/associations';
 
-import { VALIDATION_ERROR } from '../configs/constants';
+import { NOT_EXISTS, VALIDATION_ERROR } from '../configs/constants';
 import { CONFLICT_CODE }   from '../configs/status-codes';
 import { Conflict, NotFound, ValidationError } from '../errors';
 
@@ -12,7 +12,7 @@ class HomeCookService {
             where: { id: _id }
         });
         if (!user) {
-            throw new NotFound('user not found');
+            throw new NotFound(NOT_EXISTS('user'));
         } else if (user.status !== 'active') {
             throw new ValidationError(VALIDATION_ERROR);
         } else if (user.is_homeCook === 1) {

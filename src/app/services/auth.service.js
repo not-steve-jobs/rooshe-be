@@ -38,9 +38,12 @@ class AuthService {
         };
     }
 
-    async verifyEmail(_token) {
+    async verifyEmail(data) {
         const user = await User.findOne({
-            where: { verifyToken: _token }
+            where: {
+                verifyToken: data._token,
+                email: data.email
+            }
         });
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
