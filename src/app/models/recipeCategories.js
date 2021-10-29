@@ -1,7 +1,5 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
-// Models
-import UserRecipeCategories from './userRecipeCategories';
 
 const RecipeCategories = sequelize.define('recipe_categories', {
     id: {
@@ -16,16 +14,5 @@ const RecipeCategories = sequelize.define('recipe_categories', {
         allowNull: false,
     }
 });
-
-RecipeCategories.associate = () => {
-    RecipeCategories.hasMany(UserRecipeCategories,{
-        foreignKey: {
-            name: 'recipe_category_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-};
 
 module.exports = RecipeCategories;

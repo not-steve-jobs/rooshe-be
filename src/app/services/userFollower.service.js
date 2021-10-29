@@ -1,4 +1,4 @@
-import UserFollowers from '../models/userFollowers';
+import { UserFollowers } from '../models/associations';
 
 class UserFollowerService {
 

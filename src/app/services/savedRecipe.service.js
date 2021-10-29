@@ -1,4 +1,4 @@
-import SavedRecipe from '../models/savedRecipe';
+import { SavedRecipe } from '../models/associations';
 
 class SavedRecipeService {
 

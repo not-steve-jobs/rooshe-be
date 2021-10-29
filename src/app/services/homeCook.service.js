@@ -1,8 +1,9 @@
-import User from '../models/user';
-import HomeCook from '../models/homeCook';
-import { Conflict, NotFound, ValidationError } from '../errors';
+import { User } from '../models/associations';
+import { HomeCook } from '../models/associations';
+
 import { VALIDATION_ERROR } from '../configs/constants';
-import { CONFLICT_CODE } from '../configs/status-codes';
+import { CONFLICT_CODE }   from '../configs/status-codes';
+import { Conflict, NotFound, ValidationError } from '../errors';
 
 class HomeCookService {
 

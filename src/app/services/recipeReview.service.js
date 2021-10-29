@@ -1,4 +1,4 @@
-import RecipeReviews from '../models/recipeReviews';
+import { RecipeReviews } from '../models/associations';
 
 class RecipeReviewService {
 

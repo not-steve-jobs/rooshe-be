@@ -1,11 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
-// Models
-import User from './user';
-import Recipe from './recipe';
-import UserFollowers from './userFollowers';
 
-const homeCook = sequelize.define('homecook', {
+const HomeCook = sequelize.define('homecook', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -50,33 +46,4 @@ const homeCook = sequelize.define('homecook', {
     }
 });
 
-homeCook.associate = () => {
-    homeCook.belongsTo(User,{
-        foreignKey: {
-            name: 'user_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    homeCook.hasMany(UserFollowers,{
-        foreignKey: {
-            name: 'homecook_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    homeCook.hasMany(Recipe,{
-        foreignKey: {
-            name: 'user_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-};
-
-module.exports = homeCook;
+module.exports = HomeCook;

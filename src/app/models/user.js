@@ -1,13 +1,5 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
-// Models
-import HomeCook from './homeCook';
-import UserBasket from './userBasket';
-import SavedRecipe from './savedRecipe';
-import RecipeLikes from  './recipeLikes';
-import UserFollowers from './userFollowers';
-import RecipeReviews from  './recipeReviews';
-import RecipeComments from './recipeComments';
 
 const User = sequelize.define('user', {
     id: {
@@ -67,69 +59,6 @@ const User = sequelize.define('user', {
     profile_photo: {
         type: DataTypes.STRING
     }
-});
-
-User.hasOne(HomeCook,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(RecipeComments,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(RecipeLikes,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(RecipeReviews,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(SavedRecipe,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(UserBasket,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
-});
-
-User.hasMany(UserFollowers,{
-    foreignKey: {
-        name: 'user_id',
-        allowNull: false
-    },
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
 });
 
 module.exports = User;

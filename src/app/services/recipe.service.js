@@ -1,6 +1,7 @@
-import Recipe from '../models/recipe';
+import { Recipe } from '../models/associations';
+import { HomeCook } from '../models/associations';
+
 import { NotFound } from '../errors';
-import HomeCook from '../models/homeCook';
 import { NOT_EXISTS } from '../configs/constants';
 
 class RecipeService {

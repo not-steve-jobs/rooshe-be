@@ -1,4 +1,4 @@
-import RecipeCategories from '../models/recipeCategories';
+import { RecipeCategories } from '../models/associations';
 
 class RecipeCategoryService {
 

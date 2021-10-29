@@ -1,4 +1,4 @@
-import RecipeComments from '../models/recipeComments';
+import { RecipeComments } from '../models/associations';
 
 class RecipeCommentsService {
 

@@ -1,7 +1,8 @@
-import User from '../models/user';
-import { BadRequest, Conflict, NotFound, ValidationError } from '../errors';
-import { INVALID, NOT_EXISTS } from '../configs/constants';
+import { User } from '../models/associations'
+
 import { Util } from '../helpers/util';
+import { INVALID, NOT_EXISTS } from '../configs/constants';
+import { BadRequest, Conflict, NotFound, ValidationError } from '../errors';
 
 class AuthService {
 

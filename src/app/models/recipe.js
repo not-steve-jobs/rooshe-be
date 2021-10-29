@@ -1,14 +1,5 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database';
-// Models
-import HomeCook from './homeCook';
-import UserBasket from './userBasket';
-import SavedRecipe from './savedRecipe';
-import RecipeLikes from  './recipeLikes';
-import UserHashtags from './userHashtags';
-import RecipeReviews from './recipeReviews';
-import RecipeComments from './recipeComments';
-import UserRecipeCategories from './userRecipeCategories';
 
 const Recipe = sequelize.define('recipe', {
     id: {
@@ -81,80 +72,5 @@ const Recipe = sequelize.define('recipe', {
     }
 
 });
-
-Recipe.associate = () => {
-
-    Recipe.belongsTo(HomeCook, {
-        foreignKey: {
-            name: 'user_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(RecipeComments,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(RecipeLikes,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(RecipeReviews,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(SavedRecipe,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(UserBasket,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(UserHashtags,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-
-    Recipe.hasMany(UserRecipeCategories,{
-        foreignKey: {
-            name: 'recipe_id',
-            allowNull: false
-        },
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-    });
-};
 
 module.exports = Recipe;

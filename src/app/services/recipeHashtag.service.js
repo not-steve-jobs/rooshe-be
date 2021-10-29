@@ -1,4 +1,4 @@
-import RecipeHashtags from '../models/recipeHashtags';
+import { RecipeHashtags } from '../models/associations';
 
 class RecipeHashtagService {
 

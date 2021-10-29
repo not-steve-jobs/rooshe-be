@@ -1,4 +1,5 @@
-import User from '../models/user';
+import { User } from '../models/associations';
+
 import { NotFound } from '../errors';
 
 class UserService {
