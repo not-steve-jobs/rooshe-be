@@ -3,21 +3,21 @@ import { RecipeCategories } from '../models/associations';
 class RecipeCategoryService {
 
     async create(data) {
-        return await RecipeCategories.create({ ...data });
+        return await RecipeCategories.create({
+            name: data.category
+        });
     }
 
-    async update({ data, params }) {
+    async update(req) {
+        const data = req.body;
+        const _id = req.params.id;
+
         return await RecipeCategories.update(
-            { ...data },
-            { where: { id: params.id } }
+            { name: data.category },
+            { where: {id: _id} }
         );
     }
 
-    async delete(params) {
-        return await RecipeCategories.destroy({
-            where: { id: params.id }
-        });
-    }
 }
 
 export default new RecipeCategoryService();

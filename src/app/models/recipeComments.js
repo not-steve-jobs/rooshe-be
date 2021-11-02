@@ -16,6 +16,7 @@ const RecipeComments = sequelize.define('recipe_comments', {
     parrent_id: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: 0
     }
 });
 

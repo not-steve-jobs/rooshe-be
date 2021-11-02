@@ -1,15 +1,18 @@
-import {
-    SUCCESS_CODE
-} from '../../configs/status-codes';
+import { SUCCESS_CODE } from '../../configs/status-codes';
+
 import RecipeService from '../../services/recipe.service';
+import RecipeHashtagService from '../../services/recipeHashtag.service';
+import RecipeCategoryService from "../../services/recipeCategory.service";
 
 export class RecipeController {
 
     async create ({ body: data, user }, res, next) {
         try {
             const recipe = await RecipeService.create({ data, user });
+            const hashtag = await RecipeHashtagService.create(data);
+            const recipeCategories = await RecipeCategoryService.create(data);
 
-            return res.status(SUCCESS_CODE).json(recipe);
+            return res.status(SUCCESS_CODE).json({ recipe, hashtag, recipeCategories });
         } catch (e) {
             next(e);
         }
@@ -18,8 +21,10 @@ export class RecipeController {
     async update (req, res, next) {
         try {
             const recipe = await RecipeService.update(req);
+            const hashtag = await RecipeHashtagService.update(req)
+            const recipeCategories = await RecipeCategoryService.update(req);
 
-            return res.status(SUCCESS_CODE).json(recipe);
+            return res.status(SUCCESS_CODE).json({ recipe, hashtag, recipeCategories });
         } catch (e) {
             next(e);
         }

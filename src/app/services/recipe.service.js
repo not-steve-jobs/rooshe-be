@@ -20,14 +20,16 @@ class RecipeService {
 
     async update (req) {
         const _id = req.params.id;
-        const data = req.body;
-        let recipe = await Recipe.findOne({
+        const recipe = await Recipe.findOne({
             where: { id: _id }
         });
         if (!recipe) { throw new NotFound(NOT_EXISTS('recipe')); }
-        recipe = { data };
+        const data = req.body;
 
-        return recipe;
+        return await Recipe.update(
+            { ...data },
+            { where: {id: _id} }
+        );
     }
 
     async delete (params) {

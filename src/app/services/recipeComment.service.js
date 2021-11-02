@@ -5,8 +5,8 @@ class RecipeCommentsService {
     async create({ data, _id }) {
         return await RecipeComments.create({
             comment: data.comment,
-            recipe_id: data.recipe.id,
-            parrent_id: data.parrent.id,
+            recipe_id: data.recipe_id,
+            parrent_id: data.parrent_id,
             user_id: _id
         });
     }

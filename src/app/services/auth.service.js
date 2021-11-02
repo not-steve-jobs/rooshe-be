@@ -23,13 +23,14 @@ class AuthService {
         const user = await User.findOne({
             where: { email }
         });
-        const isVerify = await Util.validateHash(password,user.password);
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
-        } else if (!isVerify) {
+        }
+        const isVerify = await Util.validateHash(password,user.password);
+        if (!isVerify) {
             throw new BadRequest(INVALID('password'));
         } else if (user.status === 'inactive') {
-            throw new ValidationError('please check yor email');
+            throw new ValidationError('please verify your account');
         }
 
         return {
