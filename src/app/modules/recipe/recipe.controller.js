@@ -21,10 +21,8 @@ export class RecipeController {
     async update (req, res, next) {
         try {
             const recipe = await RecipeService.update(req);
-            const hashtag = await RecipeHashtagService.update(req);
-            const recipeCategories = await RecipeCategoryService.update(req);
 
-            return res.status(SUCCESS_CODE).json({ recipe, hashtag, recipeCategories });
+            return res.status(SUCCESS_CODE).json(recipe);
         } catch (e) {
             next(e);
         }

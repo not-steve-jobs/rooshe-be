@@ -4,13 +4,11 @@ import HomeCook from "./homeCook";
 import UserBasket from "./userBasket";
 import RecipeLikes from "./recipeLikes";
 import SavedRecipe  from "./savedRecipe";
-import UserHashtags from "./userHashtags";
 import RecipeReviews from "./recipeReviews";
 import UserFollowers  from "./userFollowers";
 import RecipeComments from "./recipeComments";
 import RecipeHashtags  from "./recipeHashtags";
 import RecipeCategories from "./recipeCategories";
-import UserRecipeCategories from "./userRecipeCategories";
 
 // User to HomeCook
 User.hasOne(HomeCook,{
@@ -265,12 +263,12 @@ UserBasket.belongsTo(Recipe,{
 });
 
 // Recipe to RecipeHashtags
-Recipe.belongsToMany(RecipeHashtags, { through: UserHashtags });
-RecipeHashtags.belongsToMany(Recipe, { through: UserHashtags });
+Recipe.belongsToMany(RecipeHashtags, { through: 'user_hashtags' });
+RecipeHashtags.belongsToMany(Recipe, { through: 'user_hashtags' });
 
 // Recipe to RecipeCategories
-Recipe.belongsToMany(RecipeCategories, { through: UserRecipeCategories });
-RecipeCategories.belongsToMany(Recipe, { through: UserRecipeCategories });
+Recipe.belongsToMany(RecipeCategories, { through: 'user_recipe_categories' });
+RecipeCategories.belongsToMany(Recipe, { through: 'user_recipe_categories' });
 
 module.exports = {
     User,
@@ -279,11 +277,9 @@ module.exports = {
     UserBasket,
     RecipeLikes,
     SavedRecipe,
-    UserHashtags,
     RecipeReviews,
     UserFollowers,
     RecipeComments,
     RecipeHashtags,
     RecipeCategories,
-    UserRecipeCategories
 }

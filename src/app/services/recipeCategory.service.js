@@ -1,32 +1,20 @@
-import { RecipeCategories, UserRecipeCategories } from '../models/associations';
+import { RecipeCategories } from '../models/associations';
 
 class RecipeCategoryService {
 
     async create({ data, recipe }) {
-        const recipeCategory = await RecipeCategories.create({
-            name: data.category
+        const arr = [];
+        data.category.forEach( item => {
+            arr.push({
+                name: item
+            })
         });
-        const userRecipeCategory = await UserRecipeCategories.create({
-            recipeId: recipe.id,
-            recipeCategoryId: recipeCategory.id
-        });
-
-        return { recipeCategory, userRecipeCategory };
-    }
-
-    async update(req) {
-        const _id = req.params.id;
-        const data = req.body;
-        const userRecipeCategory = await UserRecipeCategories.findOne({
-            where: {  recipeId: _id }
-        });
-        const category = await RecipeCategories.findOne({
-            where: { id: userRecipeCategory.recipeCategoryId }
+        const category = await RecipeCategories.bulkCreate(arr);
+        category.map(async item => {
+            await item.addRecipe(recipe)
         });
 
-        return await category.update({
-            name: data.category
-        });
+        return category;
     }
 
 }

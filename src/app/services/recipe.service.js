@@ -1,4 +1,4 @@
-import { Recipe, HomeCook } from '../models/associations';
+import  { Recipe, HomeCook, RecipeHashtags, RecipeCategories } from '../models/associations';
 
 import { NotFound } from '../errors';
 import { NOT_EXISTS } from '../configs/constants';
@@ -27,7 +27,7 @@ class RecipeService {
 
         return await Recipe.update(
             { ...data },
-            { where: {id: _id} }
+            { where: { id: _id } }
         );
     }
 
@@ -43,9 +43,13 @@ class RecipeService {
     }
 
     async getOneRecep(params) {
-        const recipe = Recipe.findOne({
-            where: { id: params.id }
-        });
+        const recipe = await Recipe.findOne({
+            where: { id:params.id },
+            include: [
+                { model: RecipeHashtags },
+                { model: RecipeCategories }
+            ]
+        })
         if (!recipe) { throw new NotFound('recipe not found'); }
 
         return recipe;
