@@ -16,11 +16,11 @@ class RecipeHashtagService {
     }
 
     async update({ data, recipe }) {
-        const userHashtag = await UserHashtags.find({
+        const userHashtag = await UserHashtags.findAll({
             where: { recipeId: recipe.id }
         });
 
-        return await RecipeHashtags.bulkupdate(
+        return await RecipeHashtags.update(
             { where: {id: userHashtag.recipeHashtagId} },
             { name: data.hashtag }
         );

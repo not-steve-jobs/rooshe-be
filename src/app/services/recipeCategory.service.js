@@ -15,7 +15,7 @@ class RecipeCategoryService {
     }
 
     async update({ data, recipe }) {
-        const userRecipeCategory = await UserRecipeCategories.find({
+        const userRecipeCategory = await UserRecipeCategories.findAll({
             where: {  recipeId: recipe.id }
         });
 

@@ -1,5 +1,8 @@
 import { RecipeReviews } from '../models/associations';
 
+import { NotFound } from '../errors';
+import { NOT_EXISTS } from "../configs/constants";
+
 class RecipeReviewService {
 
     async create({ user_id, data }) {
@@ -17,6 +20,11 @@ class RecipeReviewService {
     }
 
     async delete(_id) {
+        const review = await RecipeReviews.findOne({
+            where: { id: _id}
+        });
+        if(!review) { throw new NotFound(NOT_EXISTS('review')); }
+
         return await RecipeReviews.destroy({
             where: { id: _id }
         });
