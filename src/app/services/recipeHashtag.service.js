@@ -3,11 +3,17 @@ import { UserHashtags } from "../models/associations";
 
 class RecipeHashtagService {
 
-    async create(data) {
-        return await RecipeHashtags.bulkCreate({
+    async create({data, recipe}) {
+        const hashtag =  await RecipeHashtags.create({
             name: data.hashtag,
-            returning: true
+
         });
+        const userHashtag = await UserHashtags.create({
+            recipeId: recipe.id,
+            recipeHashtagId: hashtag.id
+        });
+
+        return { hashtag, userHashtag };
     }
 
     async update(req) {

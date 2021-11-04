@@ -9,8 +9,8 @@ export class RecipeController {
     async create ({ body: data, user }, res, next) {
         try {
             const recipe = await RecipeService.create({ data, user });
-            const hashtag = await RecipeHashtagService.create(data);
-            const recipeCategories = await RecipeCategoryService.create(data);
+            const hashtag = await RecipeHashtagService.create({ data, recipe });
+            const recipeCategories = await RecipeCategoryService.create({ data, recipe });
 
             return res.status(SUCCESS_CODE).json({ recipe, hashtag, recipeCategories });
         } catch (e) {

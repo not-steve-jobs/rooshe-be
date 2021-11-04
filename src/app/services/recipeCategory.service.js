@@ -1,11 +1,18 @@
 import { RecipeCategories } from '../models/associations';
+import { UserRecipeCategories } from '../models/associations';
 
 class RecipeCategoryService {
 
-    async create(data) {
-        return await RecipeCategories.create({
+    async create({ data, recipe }) {
+        const recipeCategory = await RecipeCategories.create({
             name: data.category
         });
+        const userRecipeCategory = await UserRecipeCategories.create({
+            recipeId: recipe.id,
+            recipeCategoryId: recipeCategory.id
+        });
+
+        return { recipeCategory, userRecipeCategory };
     }
 
     async update(req) {
