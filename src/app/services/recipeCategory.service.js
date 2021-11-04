@@ -14,13 +14,14 @@ class RecipeCategoryService {
         return { recipeCategory, userRecipeCategory };
     }
 
-    async update(req) {
-        const data = req.body;
-        const _id = req.params.id;
+    async update({ data, recipe }) {
+        const userRecipeCategory = await UserRecipeCategories.find({
+            where: {  recipeId: recipe.id }
+        });
 
         return await RecipeCategories.update(
             { name: data.category },
-            { where: {id: _id} }
+            { where: { id: userRecipeCategory.recipeCategoryId } }
         );
     }
 

@@ -32,6 +32,11 @@ class RecipeService {
     }
 
     async delete (params) {
+        const recipe = await Recipe.findOne({
+            where: { id: params.id }
+        });
+        if(!recipe) { throw new NotFound(NOT_EXISTS('recipe')); }
+
         return await Recipe.destroy({
             where: { id: params.id }
         });

@@ -12,7 +12,7 @@ class RecipeReviewService {
     async update({ data, _id }) {
         return await RecipeReviews.update(
             { ...data },
-            { where: {id: _id} }
+            { where: { id: _id } }
         );
     }
 

@@ -15,11 +15,9 @@ class RecipeHashtagService {
         return { hashtag, userHashtag };
     }
 
-    async update(req) {
-        const _id = req.params.id;
-        const data = req.body;
+    async update({ data, recipe }) {
         const userHashtag = await UserHashtags.find({
-            where: { recipeId: _id }
+            where: { recipeId: recipe.id }
         });
 
         return await RecipeHashtags.bulkupdate(
