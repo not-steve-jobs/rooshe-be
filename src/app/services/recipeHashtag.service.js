@@ -15,15 +15,19 @@ class RecipeHashtagService {
         return { hashtag, userHashtag };
     }
 
-    async update({ data, recipe }) {
-        const userHashtag = await UserHashtags.findAll({
-            where: { recipeId: recipe.id }
+    async update(req) {
+        const _id = req.params.id;
+        const data = req.body;
+        const userHashtag = await UserHashtags.findOne({
+            where: { recipeId: _id }
+        });
+        const hashtag = await RecipeHashtags.findOne({
+            where: { id: userHashtag.recipeHashtagId }
         });
 
-        return await RecipeHashtags.update(
-            { where: {id: userHashtag.recipeHashtagId} },
-            { name: data.hashtag }
-        );
+        return await hashtag.update({
+            name: data.hashtag
+        });
     }
 
 }

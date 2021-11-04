@@ -14,15 +14,19 @@ class RecipeCategoryService {
         return { recipeCategory, userRecipeCategory };
     }
 
-    async update({ data, recipe }) {
-        const userRecipeCategory = await UserRecipeCategories.findAll({
-            where: {  recipeId: recipe.id }
+    async update(req) {
+        const _id = req.params.id;
+        const data = req.body;
+        const userRecipeCategory = await UserRecipeCategories.findOne({
+            where: {  recipeId: _id }
+        });
+        const category = await RecipeCategories.findOne({
+            where: { id: userRecipeCategory.recipeCategoryId }
         });
 
-        return await RecipeCategories.update(
-            { name: data.category },
-            { where: { id: userRecipeCategory.recipeCategoryId } }
-        );
+        return await category.update({
+            name: data.category
+        });
     }
 
 }
