@@ -1,5 +1,4 @@
-import { User } from '../models/associations';
-import { HomeCook } from '../models/associations';
+import { User, HomeCook } from '../models/associations';
 
 import { NOT_EXISTS, VALIDATION_ERROR } from '../configs/constants';
 import { CONFLICT_CODE }   from '../configs/status-codes';

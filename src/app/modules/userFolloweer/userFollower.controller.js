@@ -8,8 +8,7 @@ export class UserFollowerController {
     async follow(req, res, next) {
         try {
             const user_id = req.user.id;
-            const homeCook_id = req.body.homecook.id;
-            await UserFollowerService.follow({ user_id, homeCook_id });
+            await UserFollowerService.follow(user_id);
 
             return res.status(SUCCESS_CODE).json('user follow');
         } catch (e) {
@@ -19,9 +18,8 @@ export class UserFollowerController {
 
     async unFollow(req, res, next) {
         try {
-            const user_id = req.user.id;
-            const homeCook_id = req.body.homecook.id;
-            await UserFollowerService.unFollow({ user_id, homeCook_id });
+            const _id = req.params.id;
+            await UserFollowerService.unFollow(_id);
 
             return res.status(SUCCESS_CODE).json('user unFollow');
         } catch (e) {

@@ -8,7 +8,7 @@ export class SavedRecipeController {
     async create(req, res, next) {
         try {
             const user_id = req.user.id;
-            const recipe_id = req.body.recipe.id;
+            const recipe_id = req.body.recipe_id;
             await SavedRecipeService.create({ user_id, recipe_id });
 
             return res.status(SUCCESS_CODE).json('recipe saved');
@@ -19,9 +19,8 @@ export class SavedRecipeController {
 
     async delete(req, res, next) {
         try {
-            const user_id = req.user.id;
-            const recipe_id = req.body.recipe.id;
-            await SavedRecipeService.delete({ user_id, recipe_id });
+            const _id = req.params.id
+            await SavedRecipeService.delete(_id);
 
             return res.status(SUCCESS_CODE).json('recipe removed from savedRecipe');
         } catch (e) {

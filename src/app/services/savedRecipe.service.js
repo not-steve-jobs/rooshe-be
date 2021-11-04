@@ -9,12 +9,9 @@ class SavedRecipeService {
         });
     }
 
-    async delete({ user_id, recipe_id }) {
+    async delete(_id) {
         return await SavedRecipe.destroy({
-            where: {
-                user_id,
-                recipe_id
-            }
+            where: { id: _id }
         });
     }
 

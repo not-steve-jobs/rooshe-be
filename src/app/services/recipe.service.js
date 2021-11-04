@@ -1,5 +1,4 @@
-import { Recipe } from '../models/associations';
-import { HomeCook } from '../models/associations';
+import { Recipe, HomeCook } from '../models/associations';
 
 import { NotFound } from '../errors';
 import { NOT_EXISTS } from '../configs/constants';

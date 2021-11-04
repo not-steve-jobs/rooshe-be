@@ -1,4 +1,4 @@
-import { User } from '../models/associations'
+import { User } from '../models/associations';
 
 import { Util } from '../helpers/util';
 import { INVALID, NOT_EXISTS } from '../configs/constants';
