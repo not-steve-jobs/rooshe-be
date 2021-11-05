@@ -53,6 +53,17 @@ export class AuthController {
         }
     }
 
+    async checkUser(req, res, next) {
+        try{
+            const data = req.body;
+            const userEmail = await AuthService.checkUser(data);
+
+            return res.status(SUCCESS_CODE).json(userEmail);
+        } catch (e) {
+            next(e);
+        }
+    }
+
     async resetPassEmail(req, res, next) {
         try {
             const data = req.body;

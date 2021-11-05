@@ -70,9 +70,20 @@ class AuthService {
 
         return user;
     }
-    async resetPassEmail(data) {
+
+    async checkUser(data){
         const user = await User.findOne({
             where: { verifyToken: data._token }
+        });
+
+        return user.email;
+    }
+
+    async resetPassEmail(data) {
+        const user = await User.findOne({
+            where: {
+                verifyToken: data._token,
+            }
         });
         if (!user) {
             throw new NotFound(NOT_EXISTS('user'));
